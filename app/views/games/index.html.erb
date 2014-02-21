@@ -7,7 +7,6 @@
       <th>Game on</th>
       <th></th>
       <th></th>
-      <th></th>
     </tr>
   </thead>
 
@@ -15,10 +14,9 @@
     <% @games.each do |game| %>
       <tr>
         <td><%= game.day %></td>
-        <td><%= game.game_on %></td>
+        <td><%= game.game_on ? 'Yes' : 'No'  %></td>
         <td><%= link_to 'Show', game %></td>
         <td><%= link_to 'Edit', edit_game_path(game) %></td>
-        <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
