@@ -7,12 +7,12 @@
 
 <p>
   <strong>Email:</strong>
-  <%= @baller.email %>
+  <%= @baller.email.gsub(/[a-zA-Z0-9\-_]/,'*') %>
 </p>
 
 <p>
   <strong>Phone:</strong>
-  <%= @baller.phone %>
+  <%= @baller.phone.gsub(/[a-zA-Z0-9]/,'*') %>
 </p>
 
 <p>

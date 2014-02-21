@@ -4,9 +4,8 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Email</th>
-      <th>Phone</th>
       <th>Active</th>
+      <th>Email</th>
       <th></th>
       <th></th>
       <th></th>
@@ -17,9 +16,8 @@
     <% @ballers.each do |baller| %>
       <tr>
         <td><%= baller.name %></td>
-        <td><%= baller.email %></td>
-        <td><%= baller.phone %></td>
-        <td><%= baller.active %></td>
+	<td><%= baller.active ? 'Y' : 'N' %></td>
+	<td><%= baller.email.gsub(/[a-zA-Z0-9\-_]/,'*') %></td>
         <td><%= link_to 'Show', baller %></td>
         <td><%= link_to 'Edit', edit_baller_path(baller) %></td>
         <td><%= link_to 'Destroy', baller, method: :delete, data: { confirm: 'Are you sure?' } %></td>
